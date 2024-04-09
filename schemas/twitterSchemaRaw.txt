@@ -1,0 +1,334 @@
+The information that is provided describes a schema for a graph database, used to represent data in a way that emphasizes the relationships between entities. Here's a breakdown of the information, now answer the question based on this schema:
+  nodes: [
+    {
+      name: 'Me',
+      attributes: [
+        {
+          name: 'screen_name',
+          type: 'string',
+        },
+        {
+          name: 'name',
+          type: 'string',
+        },
+        {
+          name: 'location',
+          type: 'string',
+        },
+        {
+          name: 'followers',
+          type: 'int',
+        },
+        {
+          name: 'following',
+          type: 'int',
+        },
+        {
+          name: 'url',
+          type: 'string',
+        },
+        {
+          name: 'profile_image_url',
+          type: 'string',
+        },
+      ],
+    },
+    {
+      name: 'Link',
+      attributes: [
+        {
+          name: 'url',
+          type: 'string',
+        },
+      ],
+    },
+    {
+      name: 'Source',
+      attributes: [
+        {
+          name: 'name',
+          type: 'string',
+        },
+      ],
+    },
+    {
+      name: 'Hashtag',
+      attributes: [
+        {
+          name: 'name',
+          type: 'string',
+        },
+      ],
+    },
+    {
+      name: 'User',
+      attributes: [
+        {
+          name: 'screen_name',
+          type: 'string',
+        },
+        {
+          name: 'name',
+          type: 'string',
+        },
+        {
+          name: 'location',
+          type: 'string',
+        },
+        {
+          name: 'followers',
+          type: 'int',
+        },
+        {
+          name: 'following',
+          type: 'int',
+        },
+        {
+          name: 'url',
+          type: 'string',
+        },
+        {
+          name: 'profile_image_url',
+          type: 'string',
+        },
+        {
+          name: 'screen_name',
+          type: 'string',
+        },
+        {
+          name: 'name',
+          type: 'string',
+        },
+        {
+          name: 'location',
+          type: 'string',
+        },
+        {
+          name: 'followers',
+          type: 'int',
+        },
+        {
+          name: 'following',
+          type: 'int',
+        },
+        {
+          name: 'statuses',
+          type: 'int',
+        },
+        {
+          name: 'url',
+          type: 'string',
+        },
+        {
+          name: 'profile_image_url',
+          type: 'string',
+        },
+      ],
+    },
+    {
+      name: 'Tweet',
+      attributes: [
+        {
+          name: 'id',
+          type: 'int',
+        },
+        {
+          name: 'id_str',
+          type: 'string',
+        },
+        {
+          name: 'text',
+          type: 'string',
+        },
+        {
+          name: 'favorites',
+          type: 'int',
+        },
+        {
+          name: 'import_method',
+          type: 'string',
+        },
+      ],
+    },
+  ],
+  edges: [
+    {
+      name: 'USING',
+      label: 'USING',
+      collection: 'USING',
+      from: 'Tweet',
+      to: 'Source',
+      attributes: [],
+    },
+    {
+      name: 'SIMILAR_TO',
+      label: 'SIMILAR_TO',
+      collection: 'SIMILAR_TO',
+      from: 'User',
+      to: 'User',
+      attributes: [
+        {
+          name: 'score',
+          type: 'float',
+        },
+      ],
+    },
+    {
+      name: 'SIMILAR_TO',
+      label: 'SIMILAR_TO',
+      collection: 'SIMILAR_TO',
+      from: 'User',
+      to: 'Me',
+      attributes: [
+        {
+          name: 'score',
+          type: 'float',
+        },
+      ],
+    },
+    {
+      name: 'AMPLIFIES',
+      label: 'AMPLIFIES',
+      collection: 'AMPLIFIES',
+      from: 'Me',
+      to: 'User',
+      attributes: [],
+    },
+    {
+      name: 'AMPLIFIES',
+      label: 'AMPLIFIES',
+      collection: 'AMPLIFIES',
+      from: 'User',
+      to: 'User',
+      attributes: [],
+    },
+    {
+      name: 'RT_MENTIONS',
+      label: 'RT_MENTIONS',
+      collection: 'RT_MENTIONS',
+      from: 'Me',
+      to: 'User',
+      attributes: [],
+    },
+    {
+      name: 'RT_MENTIONS',
+      label: 'RT_MENTIONS',
+      collection: 'RT_MENTIONS',
+      from: 'User',
+      to: 'User',
+      attributes: [],
+    },
+    {
+      name: 'FOLLOWS',
+      label: 'FOLLOWS',
+      collection: 'FOLLOWS',
+      from: 'User',
+      to: 'Me',
+      attributes: [],
+    },
+    {
+      name: 'FOLLOWS',
+      label: 'FOLLOWS',
+      collection: 'FOLLOWS',
+      from: 'Me',
+      to: 'User',
+      attributes: [],
+    },
+    {
+      name: 'FOLLOWS',
+      label: 'FOLLOWS',
+      collection: 'FOLLOWS',
+      from: 'User',
+      to: 'User',
+      attributes: [],
+    },
+    {
+      name: 'FOLLOWS',
+      label: 'FOLLOWS',
+      collection: 'FOLLOWS',
+      from: 'Me',
+      to: 'Me',
+      attributes: [],
+    },
+    {
+      name: 'INTERACTS_WITH',
+      label: 'INTERACTS_WITH',
+      collection: 'INTERACTS_WITH',
+      from: 'User',
+      to: 'User',
+      attributes: [],
+    },
+    {
+      name: 'INTERACTS_WITH',
+      label: 'INTERACTS_WITH',
+      collection: 'INTERACTS_WITH',
+      from: 'Me',
+      to: 'User',
+      attributes: [],
+    },
+    {
+      name: 'RETWEETS',
+      label: 'RETWEETS',
+      collection: 'RETWEETS',
+      from: 'Tweet',
+      to: 'Tweet',
+      attributes: [],
+    },
+    {
+      name: 'REPLY_TO',
+      label: 'REPLY_TO',
+      collection: 'REPLY_TO',
+      from: 'Tweet',
+      to: 'Tweet',
+      attributes: [],
+    },
+    {
+      name: 'CONTAINS',
+      label: 'CONTAINS',
+      collection: 'CONTAINS',
+      from: 'Tweet',
+      to: 'Link',
+      attributes: [],
+    },
+    {
+      name: 'MENTIONS',
+      label: 'MENTIONS',
+      collection: 'MENTIONS',
+      from: 'Tweet',
+      to: 'User',
+      attributes: [],
+    },
+    {
+      name: 'MENTIONS',
+      label: 'MENTIONS',
+      collection: 'MENTIONS',
+      from: 'Tweet',
+      to: 'Me',
+      attributes: [],
+    },
+    {
+      name: 'TAGS',
+      label: 'TAGS',
+      collection: 'TAGS',
+      from: 'Tweet',
+      to: 'Hashtag',
+      attributes: [],
+    },
+    {
+      name: 'POSTS',
+      label: 'POSTS',
+      collection: 'POSTS',
+      from: 'User',
+      to: 'Tweet',
+      attributes: [],
+    },
+    {
+      name: 'POSTS',
+      label: 'POSTS',
+      collection: 'POSTS',
+      from: 'Me',
+      to: 'Tweet',
+      attributes: [],
+    },
+  ],
+};

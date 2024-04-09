@@ -1,0 +1,1 @@
+The information that is provided describes a schema for a graph database, used to represent data in a way that emphasizes the relationships between entities. Here's a breakdown of the information, now answer the question based on this schema:

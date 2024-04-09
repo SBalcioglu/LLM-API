@@ -1,0 +1,21 @@
+The airportRaw defines a graph structure within a schema, potentially designed for an aviation context, considering the nodes and edges related to airports, planes, and staff. The schema consists of various nodes, each representing different entities, and edges that define the relationships between these entities.
+
+Nodes: Thijs: A node with no specified attributes.
+Airport: Represents an airport with the following attributes:
+city: A string indicating the city where the airport is located.
+vip: A boolean value indicating whether the airport has VIP facilities.
+state: A string denoting the state or region where the airport is situated.
+Airport2: Another airport node, similar to the Airport node, with attributes for city, VIP status, and state.
+Plane: Represents an airplane with attributes:
+type: A string describing the type of the plane.
+maxFuelCapacity: An integer representing the maximum fuel capacity of the plane.
+Staff: A node representing staff members, with no specified attributes.
+Edges: Airport2:Airport: Connects Airport2 to Airport with attributes for arrivalTime and departureTime, both integers.
+Airport:Staff: Links Airport to Staff, with an attribute salary represented as an integer.
+Plane:Airport: Connects Plane to Airport without any specified attributes.
+Airport:Thijs: Connects Airport to Thijs, with an attribute hallo of type string.
+Thijs:Airport: Connects Thijs to Airport, also with the hallo attribute of type string.
+Staff:Plane: Links Staff to Plane with a string attribute hallo.
+Staff:Airport2: Connects Staff to Airport2 with a hallo string attribute.
+Airport2:Plane: Links Airport2 to Plane, again with the hallo attribute of type string.
+Airport:Airport: Connects an Airport to another Airport with a test attribute of type string. This schema organizes the data into a graph format, making it suitable for analysis or visualization within applications that require understanding the relationships and attributes of entities like airports, planes, and staff within an aviation or similar logistical context.
