@@ -18,7 +18,7 @@ Access to GPT-4 and Deepseek APIs (API keys required).
 2. Clone the repository:
 
 Open a new terminal and type:
-git clone https://git.science.uu.nl/graphpolaris/experiments/llm-query-explainer/LLM-API.git
+git clone https://github.com/SBalcioglu/LLM-Query-Explainer.git
 cd LLM API
 
 3. Install dependencies:
