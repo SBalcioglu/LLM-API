@@ -53,8 +53,11 @@ The application should now be running and accessible through http://localhost:30
 ## Usage
 
 1.Select a knowledge graph schema: Choose from the available schemas which set the context for your query.
+
 2.Choose an LLM model: Select the model you wish to use for interpreting your query.
+
 3.Input your query: Type in your query related to the selected schema.
+
 4.Submit: Submit your query and wait for the LLM's response.
 
 ## Contributing
