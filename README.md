@@ -19,7 +19,7 @@ Access to GPT-4 and Deepseek APIs (API keys required).
 
 Open a new terminal and type:
 git clone https://github.com/SBalcioglu/LLM-Query-Explainer.git
-cd LLM API
+cd LLM-Query-Explainer
 
 3. Install dependencies:
 
